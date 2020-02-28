@@ -21,7 +21,7 @@ const Login = () => {
     event.preventDefault();
     axios.post(`http://localhost:5000/api/login`, user)
          .then(res => {
-           localStorage.setItem('token', res.data.payload)
+           window.localStorage.setItem('token', res.data.payload)
            history.push('/protected')
          })
          .catch(err => console.log('A submission error occurred', err))
@@ -35,7 +35,7 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <input name='username' onChange={handleChange} value={user.username} placeholder='please enter your username' type='text'/>
         <input name='password' onChange={handleChange} value={user.password} placeholder='please enter your password' type='password'/>
-        <button>Login</button>
+        <button onClick={handleSubmit}>Login</button>
       </form>
 
     </>

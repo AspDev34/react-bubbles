@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axiosWithAuth from './utilities/axiosWithAuth';
+import {axiosWithAuth} from './utilities/axiosWithAuth';
+
 
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
